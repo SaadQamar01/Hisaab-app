@@ -1,0 +1,124 @@
+<app-page-header [heading]="'Student Profile'" [icon]="'fa-edit'"></app-page-header>
+<!--<span>Student Name: </span><span>{{studentName}}</span><br/>
+<span>Father Name: </span><span>{{fatherName}}</span><br/>
+<span>Student Email: </span><span>{{email}}</span><br/>
+<span>Student QRno: </span><span>{{QRno}}</span><br/>
+<span>Student Class: </span><span>{{class}}</span><br/>
+<span>Registration Date: </span><span>{{registrationDate}}</span><br/>
+<span>Student Fees: </span><span>{{studentFees}}</span><br/>-->
+<html>
+
+<head>
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>My profile</title>
+</head>
+<div class="container">
+	<div class="row">
+		<!--<h2>SHW Solutions!</h2>-->
+
+
+		<div class="col-md-7 ">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4>User Profile</h4>
+				</div>
+				<div class="panel-body">
+
+					<div class="box box-info">
+
+						<div class="box-body">
+							<div class="col-sm-6">
+								<div align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1"
+										class="img-circle img-responsive">
+
+									<input id="profile-image-upload" class="hidden" type="file">
+									<div style="color:#999;">click here to change profile image</div>
+
+
+								</div>
+
+								<br>
+
+
+							</div>
+							<div class="col-sm-6">
+								<h4 style="color:#00b1b1;">{{studentName}} </h4>
+								<span><p>Student</p></span>
+							</div>
+							<div class="clearfix"></div>
+							<hr style="margin:5px 0 5px 0;">
+
+
+							<div class="col-sm-5 col-xs-6 tital ">Father Name:</div>
+							<div class="col-sm-7 col-xs-6 ">{{fatherName}}</div>
+							<div class="clearfix"></div>
+							<div class="bot-border"></div>
+
+							<div class="col-sm-5 col-xs-6 tital ">Email:</div>
+							<div class="col-sm-7"> {{email}}</div>
+							<div class="clearfix"></div>
+							<div class="bot-border"></div>
+
+							<div class="col-sm-5 col-xs-6 tital ">QR no:</div>
+							<div class="col-sm-7"> {{QRno}} </div>
+							<div class="clearfix"></div>
+							<div class="bot-border"></div>
+
+							<div class="col-sm-5 col-xs-6 tital ">Date Of Registration:</div>
+							<div class="col-sm-7">{{registrationDate}}</div>
+
+							<div class="clearfix"></div>
+							<div class="bot-border"></div>
+
+							<div class="col-sm-5 col-xs-6 tital ">Fees:</div>
+							<div class="col-sm-7">{{studentFees}}</div>
+
+							<div class="clearfix"></div>
+							<div class="bot-border"></div>
+
+							<div class="col-sm-5 col-xs-6 tital ">Class:</div>
+							<div class="col-sm-7">{{class}}</div>
+
+							<div class="clearfix"></div>
+							<div class="bot-border"></div>
+
+							<div class="col-sm-5 col-xs-6 tital ">Place Of Birth:</div>
+							<div class="col-sm-7">Karachi</div>
+
+							<div class="clearfix"></div>
+							<div class="bot-border"></div>
+
+							<div class="col-sm-5 col-xs-6 tital ">Nationality:</div>
+							<div class="col-sm-7">Pakistani</div>
+
+							<div class="clearfix"></div>
+							<div class="bot-border"></div>
+
+							<div class="col-sm-5 col-xs-6 tital ">Religion:</div>
+							<div class="col-sm-7">Islam</div>
+
+
+							<!-- /.box-body -->
+						</div>
+						<!-- /.box -->
+
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+		<script>
+              $(function() {
+    $('#profile-image1').on('click', function() {
+        $('#profile-image-upload').click();
+    });
+});       
+              </script>
+	</div>
+</div>
+</html>

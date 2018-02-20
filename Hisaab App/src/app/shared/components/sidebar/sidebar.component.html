@@ -1,0 +1,96 @@
+{{type}}
+<!--<div *ngIf="type=='superAdmin';then SuperAdmin else Demo"></div>-->
+<!-- <div *ngIf="type=='superAdmin';">
+	<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+		<ul class="list-group">
+			<a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'Dashboard'  }}
+			</a>
+			<a [routerLink]="['/school-registration']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;{{ 'School Registration' }}
+			</a>
+			<a [routerLink]="['/view-school']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-table"></i>&nbsp;{{ 'View Schools'  }}
+			</a>
+		</ul>
+	</nav>
+</div> -->
+<div *ngIf="type=='admin';">
+	<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+		<ul class="list-group">
+			<a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'Dashboard' }}
+			</a>
+			<a [routerLink]="['/expenses']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;{{ 'Expenses' }}
+			</a>
+			<a [routerLink]="['/amount-received']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-table"></i>&nbsp;{{ 'Amount Received'  }}
+			</a>
+			<a [routerLink]="['/daily-reports']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-file-o"></i>&nbsp;{{ 'Daily Reports'  }}
+			</a>
+			<a [routerLink]="['/person-details']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-file-o"></i>&nbsp;{{ 'Person Details'  }}
+			</a>
+			<a [routerLink]="['/project-details']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-file-o"></i>&nbsp;{{ 'Project Details'  }}
+			</a>
+			<!-- <a [routerLink]="['/attendance-record']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-file-o"></i>&nbsp;{{ 'Attendance Record'  }}
+			</a> -->
+			<a [routerLink]="['/people-categories']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-file-o"></i>&nbsp;{{ 'People Categories'  }}
+			</a>
+			<a [routerLink]="['/peoples']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-file-o"></i>&nbsp;{{ 'Peoples'  }}
+			</a>
+			<a [routerLink]="['/projects']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-file-o"></i>&nbsp;{{ 'Projects'  }}
+			</a>
+			<a [routerLink]="['/accounts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-file-o"></i>&nbsp;{{ 'Accounts'  }}
+			</a>
+		</ul>
+	</nav>
+	<!--</ng-template>-->
+</div>
+<div *ngIf="type=='user';">
+	<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+		<ul class="list-group">
+			<a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'Dashboard'  }}
+			</a>
+			<!-- <a [routerLink]="['/employee-profile']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-table"></i>&nbsp;{{ 'Employee Profile'  }}
+			</a>
+			<a [routerLink]="['/employee-attendence']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;{{ 'Attendence Record'  }}
+			</a>
+			<a [routerLink]="['/emp-receipt-voucher']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-file-o"></i>&nbsp;{{ 'Payment Record'  }}
+			</a>
+			<a [routerLink]="['/employee-query']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-file-o"></i>&nbsp;{{ 'Employee Query'  }}
+			</a> -->
+		</ul>
+	</nav>
+</div>
+<!-- <div *ngIf="type=='student';">
+	<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+		<ul class="list-group">
+			<a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'Dashboard'  }}
+			</a>
+			<a [routerLink]="['/student-profile']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;{{ 'Student Profile'  }}
+			</a>
+			<a [routerLink]="['/student-fee']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-table"></i>&nbsp;{{ 'Fees Record'  }}
+			</a>
+			<a [routerLink]="['/student-query']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-file-o"></i>&nbsp;{{ 'Student Query'  }}
+			</a>
+		</ul>
+	</nav>
+</div> -->

@@ -1,0 +1,108 @@
+<div [@routerTransition]>
+<app-page-header [heading]="'Peoples'" [icon]="'fa-edit'"></app-page-header>
+<div class="row">
+    <div class="col-md-4">
+        <div class="box-header" style="margin-bottom:30px;margin-top:20px">
+            <h4 class="text-center">Add New People</h4>
+            <!-- <button (click)="formToggleFunc()">{{formTogglebtn}}</button> -->
+        </div>
+        <div [@formToggle]='formTogglebtn'>
+                <form [formGroup]="myForm" novalidate>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span>People Category</span>
+                                    <select class="form-control" (change)="selectChangeHandler($event)" style="width:100%;margin-top:10px;">
+                                        <option value="0">Select Category</option>
+                                        <option *ngFor="let category of categories" [value]="category.category_id">{{category.name}}</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>New People Name</span>
+                                    <input type="text" [(ngModel)]="peopleName" class="form-control input-underline input-lg" formControlName="peopleName">
+                                    <span>People Name in Urdu</span>
+                                    <input type="text" [(ngModel)]="peopleNameInUrdu" class="form-control input-underline input-lg" formControlName="peopleNameInUrdu">
+                                    <span>New People Contact</span>
+                                    <input type="text" [(ngModel)]="peopleContact" class="form-control input-underline input-lg" formControlName="peopleContact">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-dark btn-lg btn-block" [disabled]="myForm.status == 'INVALID'" (click)="submit()">Submit</button>
+                </form>
+            </div>
+    </div>
+
+    <div class="col-md-8 card-block" style="text-align:center">
+        <div class="box-header" style="display: flex; justify-content: space-between;margin:0% 1% 1% 1%;">
+            <h4>List of People Category</h4>
+            <button class="btn btn-primary" (click)="openReportsFilter()">{{toggleSign}}</button>
+        </div>
+        <div [@expandCollapse]='openCloseAnim' class="table-responsive">
+            <div class="row" style="display: flex; justify-content: space-between;margin:0% 1% 1% 1%;">
+                <div class="row">
+                    <!-- <span>show</span> -->
+                    <select class="form-control" (change)="getNRecords($event)">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                    <!-- <span>entries</span> -->
+                </div>
+                <div class="pull-right">
+                    <input class="form-control" [(ngModel)]="searchText" type="search" placeholder="search" />
+                </div>
+            </div>
+            <table class="table" border="1x" >
+                <thead class="thead-inverse">
+                    <tr>
+                        <!-- <th>No.</th> -->
+                        <th>People Name</th>
+                        <th>Category</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let people of pagedItems | filter : searchText">
+                        <!-- <td>{{people.people_id}}</td> -->
+                        <td>{{people.people_name}}</td>
+                        <td>{{people.people_catid}}</td>
+                        <td>
+                            <span class="btn btn-primary" (click)="editDetails(people)">Edit</span>
+                        </td>
+                        <td>
+                            <span class="btn btn-danger" (click)="deleteDetails(people.people_id)">Delete</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                    <li  class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+                        <a class="page-link" (click)="setPage(1)">First</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+                        <a class="page-link" (click)="setPage(pager.currentPage - 1)">Previous</a>
+                    </li>
+                    <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                        <a class="page-link" (click)="setPage(page)">{{page}}</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                        <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                        <a class="page-link" (click)="setPage(pager.totalPages)">Last</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+    <!-- /.box-body -->
+</div>
+</div>
